@@ -7,6 +7,7 @@ const NAV = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
+  { to: "/portfolio", label: "Portfolio" },
   { to: "/process", label: "Our Process" },
   { to: "/contact", label: "Contact" },
 ] as const;
@@ -31,19 +32,19 @@ export function Header() {
     >
       <div className={cn("mx-auto flex max-w-7xl items-center justify-between px-6 transition-all duration-500 lg:px-10", scrolled ? "h-16" : "h-20")}>
         <Link to="/" className="group flex flex-col leading-none" aria-label="LATIF — home" onClick={() => setOpen(false)}>
-          <span className="wordmark text-2xl text-navy md:text-[1.7rem]">Latif</span>
+          <span className="wordmark text-2xl text-navy md:text-[1.7rem]">LATIF</span>
           <span className="mt-1 hidden text-[0.6rem] font-medium uppercase tracking-[0.3em] text-gold sm:block">
             Ebook Promotion Specialist
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-9 lg:flex" aria-label="Main">
+        <nav className="hidden items-center gap-7 lg:flex xl:gap-9" aria-label="Main">
           {NAV.map((item) => (
             <Link
               key={item.to}
               to={item.to}
               activeOptions={{ exact: item.to === "/" }}
-              className="relative py-2 text-[0.8rem] font-normal uppercase tracking-[0.18em] text-charcoal/80 transition-colors hover:text-navy data-[status=active]:text-navy after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-500 hover:after:scale-x-100 data-[status=active]:after:scale-x-100"
+              className="relative py-2 text-[0.78rem] font-normal uppercase tracking-[0.16em] text-charcoal/80 transition-colors hover:text-navy data-[status=active]:text-navy after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-500 hover:after:scale-x-100 data-[status=active]:after:scale-x-100"
             >
               {item.label}
             </Link>

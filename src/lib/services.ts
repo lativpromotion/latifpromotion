@@ -19,7 +19,7 @@ export const SERVICES: Service[] = [
     number: "01",
     title: "TikTok / Instagram Book Feature",
     description:
-      "A social media book feature designed to introduce books to TikTok and Instagram audiences, showcase their stories and support book discoverability.",
+      "A social media book feature designed to introduce books to TikTok and Instagram audiences and support book discoverability.",
     price: "$20",
     priceNote: "registration fee",
     cta: "Enquire About This Service",
@@ -42,7 +42,7 @@ export const SERVICES: Service[] = [
     number: "03",
     title: "Book Mockup Design",
     description:
-      "Professional 3D book mockup presentations designed to showcase book covers through attractive, polished visual displays.",
+      "Professional 3D book mockup presentations designed to showcase book covers through attractive visual displays.",
     price: "$75",
     cta: "Order a Book Mockup",
   },
@@ -51,7 +51,7 @@ export const SERVICES: Service[] = [
     number: "04",
     title: "Social Media Management",
     description:
-      "Social media management services designed to help authors maintain a consistent and professional online presence.",
+      "Social media management and content support designed to help authors maintain a consistent professional online presence.",
     packages: [
       { label: "1-week management", price: "$45" },
       { label: "2-week management", price: "$85" },
@@ -64,7 +64,7 @@ export const SERVICES: Service[] = [
     number: "05",
     title: "Website Design",
     description:
-      "Professional custom website creation for authors who want a polished online presence to showcase their books, author identity and writing projects.",
+      "Professional custom website creation for authors seeking an online presence to showcase their books and author identity.",
     price: "$845",
     cta: "Request Website Design",
   },
@@ -73,7 +73,7 @@ export const SERVICES: Service[] = [
     number: "06",
     title: "Website Redesign",
     description:
-      "Website redesign services focused on improving the visual appearance, structure, user experience and overall presentation of an existing author website.",
+      "Website redesign focused on improving presentation, layout, usability and visual consistency.",
     price: "$455",
     cta: "Request Website Redesign",
   },
@@ -95,7 +95,7 @@ export const SERVICES: Service[] = [
     number: "08",
     title: "Book Challenge",
     description:
-      "A book-focused promotional challenge designed to encourage reader awareness, engagement and interest in featured titles.",
+      "A book-focused promotional challenge designed to encourage reader awareness and participation.",
     price: "$75",
     cta: "Enquire About Book Challenges",
   },
@@ -111,7 +111,10 @@ export const BRAND = {
   name: "LATIF",
   title: "Ebook Promotion Specialist | Author Outreach & Book Marketing",
   business: "Fourth Group & Co.",
-  email: "hello@fourthgroup.co",
+  /** Primary contact email — LATIF's personal professional address. */
+  email: "latif@fourthgroup.co",
+  /** General business email for Fourth Group & Co. */
+  generalEmail: "hello@fourthgroup.co",
   website: "fourthgroup.co",
   websiteUrl: "https://fourthgroup.co",
 } as const;

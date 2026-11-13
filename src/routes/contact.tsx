@@ -38,7 +38,7 @@ function ContactPage() {
             <dl className="mt-12 divide-y divide-border border-y border-border">
               <div className="grid grid-cols-[10rem_1fr] gap-4 py-5">
                 <dt className="eyebrow pt-1 text-[0.65rem] text-muted-foreground">Professional Name</dt>
-                <dd className="wordmark text-xl text-navy">Latif</dd>
+                <dd className="wordmark text-xl text-navy">LATIF</dd>
               </div>
               <div className="grid grid-cols-[10rem_1fr] gap-4 py-5">
                 <dt className="eyebrow pt-1 text-[0.65rem] text-muted-foreground">Associated Business</dt>
