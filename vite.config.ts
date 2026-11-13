@@ -15,4 +15,25 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    // Pre-bundle client deps up front so the dev server never re-optimizes mid-session,
+    // which loads a second React copy and crashes hooks ("reading 'useState' of null").
+    optimizeDeps: {
+      include: [
+        "react",
+        "react-dom",
+        "react-dom/client",
+        "react-hook-form",
+        "@hookform/resolvers/zod",
+        "zod",
+        "lucide-react",
+        "@radix-ui/react-select",
+        "@radix-ui/react-label",
+        "@radix-ui/react-slot",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge",
+      ],
+    },
+  },
 });

@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Service names, prices and CTA labels live only in `src/lib/services.ts`; pages and the enquiry form read from it so prices never drift between pages.
+- Each nav section (Home, About, Services, Process, Contact) is its own route with its own `head()`; service CTAs link to `/contact?service=<slug>` to preselect the form.
+- Enquiries are validated with the shared zod schema in `src/lib/enquiry-schema.ts` and inserted by the `submitEnquiry` server function using the admin client; `contact_submissions` has RLS on with no browser policies, so visitors can never read submissions.
+- `vite.config.ts` pre-bundles client deps via `optimizeDeps.include`; add any new client package there so mid-session re-optimization never loads a duplicate React.

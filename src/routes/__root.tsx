@@ -12,6 +12,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Header } from "@/components/site/Header";
+import { Footer } from "@/components/site/Footer";
 
 function NotFoundComponent() {
   return (
@@ -81,21 +83,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "LATIF — Ebook Promotion Specialist" },
+      {
+        name: "description",
+        content: "LATIF, Ebook Promotion Specialist: author outreach and book marketing services with Fourth Group & Co.",
+      },
+      { name: "author", content: "LATIF" },
+      { name: "theme-color", content: "#101D32" },
+      { property: "og:site_name", content: "LATIF" },
+      { property: "og:title", content: "LATIF — Ebook Promotion Specialist" },
+      {
+        property: "og:description",
+        content: "Author outreach and book marketing services with Fourth Group & Co.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -124,7 +139,19 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-navy focus:px-4 focus:py-2 focus:text-on-navy"
+      >
+        Skip to content
+      </a>
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main id="main" className="flex-1">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
     </QueryClientProvider>
   );
 }
