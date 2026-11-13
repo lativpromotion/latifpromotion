@@ -3,7 +3,7 @@ import { enquirySchema } from "./enquiry-schema";
 import { getService } from "./services";
 
 export const submitEnquiry = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => enquirySchema.parse(data))
+  .validator((data: unknown) => enquirySchema.parse(data))
   .handler(async ({ data }) => {
     // Honeypot filled in: pretend success, store nothing.
     if (data.company) return { ok: true as const };
