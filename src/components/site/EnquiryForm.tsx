@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useServerFn } from "@tanstack/react-start";
 import { Check, Loader2 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 const fieldClass =
   "h-12 rounded-none border-0 border-b border-input bg-transparent px-0 text-base shadow-none focus-visible:border-gold focus-visible:ring-0";
 
-export function EnquiryForm({ initialService }: { initialService?: string }) {
+export function EnquiryForm({ initialService }: { initialService?: string | undefined }) {
   const send = useServerFn(submitEnquiry);
   const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
   const [serverError, setServerError] = useState<string | null>(null);
@@ -149,7 +149,7 @@ export function EnquiryForm({ initialService }: { initialService?: string }) {
   );
 }
 
-function Field({ label, id, error, className, children }: { label: string; id: string; error?: string; className?: string; children: React.ReactNode }) {
+function Field({ label, id, error, className, children }: { label: string; id: string; error?: string | undefined; className?: string | undefined; children: ReactNode }) {
   return (
     <div className={className}>
       <Label htmlFor={id} className="eyebrow text-[0.65rem] text-muted-foreground">{label}</Label>

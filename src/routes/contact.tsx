@@ -10,7 +10,7 @@ type ContactSearch = { service?: string };
 
 export const Route = createFileRoute("/contact")({
   validateSearch: (search: Record<string, unknown>): ContactSearch => {
-    const s = search.service;
+    const s = search["service"];
     return typeof s === "string" && (SERVICE_SLUGS as string[]).includes(s) ? { service: s } : {};
   },
   head: () => ({
