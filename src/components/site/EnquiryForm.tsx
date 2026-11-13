@@ -134,7 +134,7 @@ export function EnquiryForm({ initialService }: { initialService?: string | unde
 
       <div className="mt-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <p className="text-xs leading-relaxed text-muted-foreground">
-          Prefer email? Write to <a href={`mailto:${BRAND.email}`} className="text-navy underline decoration-gold underline-offset-4">{BRAND.email}</a>
+          Prefer email? Write to LATIF at <a href={`mailto:${BRAND.email}`} className="text-navy underline decoration-gold underline-offset-4">{BRAND.email}</a>
         </p>
         <button
           type="submit"

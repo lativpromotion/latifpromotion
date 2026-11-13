@@ -28,6 +28,7 @@ export default defineConfig({
         "zod",
         "lucide-react",
         "@radix-ui/react-select",
+        "@radix-ui/react-dialog",
         "@radix-ui/react-label",
         "@radix-ui/react-slot",
         "class-variance-authority",

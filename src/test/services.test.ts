@@ -53,3 +53,14 @@ describe("enquiry form", () => {
     expect(r.success).toBe(true);
   });
 });
+
+describe("contact details", () => {
+  it("latif@fourthgroup.co is the primary email", async () => {
+    const { BRAND } = await import("@/lib/services");
+    expect(BRAND.email).toBe("latif@fourthgroup.co");
+  });
+  it("hello@fourthgroup.co is the general business email", async () => {
+    const { BRAND } = await import("@/lib/services");
+    expect(BRAND.generalEmail).toBe("hello@fourthgroup.co");
+  });
+});

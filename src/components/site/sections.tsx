@@ -1,19 +1,18 @@
 import { Link } from "@tanstack/react-router";
+import { ArrowRight, BookOpen, ClipboardCheck, Eye, Lightbulb, Mail, MessagesSquare, Receipt, Target } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
-import trailerImg from "@/assets/portfolio-trailer.jpg";
-import mockupImg from "@/assets/portfolio-mockup.jpg";
-import socialFeatureImg from "@/assets/portfolio-social-feature.jpg";
-import socialDesignsImg from "@/assets/portfolio-social-designs.jpg";
-import websiteImg from "@/assets/portfolio-website.jpg";
-import goodreadsImg from "@/assets/portfolio-goodreads.jpg";
+import { PORTFOLIO, PORTFOLIO_DISCLAIMER } from "@/lib/portfolio";
+import { BRAND } from "@/lib/services";
 
 const REASONS = [
-  { n: "01", title: "Personalized Author Communication", body: "Every project begins with understanding the author's book and objectives." },
-  { n: "02", title: "Professional Presentation", body: "Carefully prepared promotional materials that respect the identity of each book." },
-  { n: "03", title: "Clear Pricing", body: "Transparent service descriptions and pricing." },
-  { n: "04", title: "Creative Promotional Solutions", body: "Different promotional opportunities for different types of books and authors." },
-  { n: "05", title: "Author-Focused Approach", body: "Professional communication, organized delivery and author approval where applicable." },
+  { icon: MessagesSquare, title: "Personalized Author Communication", body: "Every project begins with understanding the author's book, voice and objectives." },
+  { icon: BookOpen, title: "Professional Book Presentation", body: "Carefully prepared promotional materials that respect the identity of each book." },
+  { icon: Receipt, title: "Clear Service Descriptions & Pricing", body: "Every service is described plainly, with its price shown upfront." },
+  { icon: Lightbulb, title: "Creative Promotional Solutions", body: "Different promotional opportunities for different types of books and authors." },
+  { icon: Target, title: "Author-Focused Promotional Planning", body: "Services are suggested around the author's book, genre and goals." },
+  { icon: Eye, title: "Transparent Expectations", body: "Promotion supports visibility and discoverability — specific results are never promised." },
+  { icon: ClipboardCheck, title: "Professional Service Delivery", body: "Organized delivery, clear updates and author approval where applicable." },
 ];
 
 export function WhyChoose() {
@@ -25,19 +24,27 @@ export function WhyChoose() {
             <div className="lg:sticky lg:top-32">
               <SectionHeading
                 eyebrow="The Approach"
-                title="Why Choose LATIF?"
+                title="Why Work With LATIF?"
                 intro="A considered, author-first way of working — built on clarity, care and professional presentation."
               />
             </div>
           </div>
-          <ol className="lg:col-span-8">
+          <ol className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:col-span-8">
             {REASONS.map((r, i) => (
-              <Reveal as="li" key={r.n} delay={i * 60} className="grid grid-cols-[4rem_1fr] gap-6 border-t border-border py-10 last:border-b md:grid-cols-[6rem_1fr]">
-                <span className="font-display text-4xl text-gold md:text-5xl">{r.n}</span>
-                <div>
-                  <h3 className="text-2xl text-navy md:text-3xl">{r.title}</h3>
-                  <p className="mt-3 max-w-xl leading-relaxed text-muted-foreground">{r.body}</p>
+              <Reveal
+                as="li"
+                key={r.title}
+                delay={(i % 2) * 80}
+                className={`group relative bg-paper p-8 transition-colors duration-500 hover:bg-ivory md:p-10 ${i === REASONS.length - 1 ? "sm:col-span-2" : ""}`}
+              >
+                <div className="flex items-start justify-between">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/70 text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-navy">
+                    <r.icon className="h-5 w-5" strokeWidth={1.4} aria-hidden="true" />
+                  </span>
+                  <span className="font-display text-2xl text-gold/60">{String(i + 1).padStart(2, "0")}</span>
                 </div>
+                <h3 className="mt-8 text-2xl leading-snug text-navy">{r.title}</h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">{r.body}</p>
               </Reveal>
             ))}
           </ol>
@@ -48,10 +55,10 @@ export function WhyChoose() {
 }
 
 const STEPS = [
-  { n: "01", title: "Discovery", body: "Understand the author's book, genre, audience and promotional goals." },
-  { n: "02", title: "Strategy", body: "Identify suitable services and promotional opportunities." },
-  { n: "03", title: "Preparation", body: "Prepare promotional materials and share proposed content with the author for approval where applicable." },
-  { n: "04", title: "Delivery", body: "Proceed with the agreed service and provide professional communication throughout the process." },
+  { n: "01", title: "Discovery", body: "Understand the author's book, genre and promotional goals." },
+  { n: "02", title: "Strategy", body: "Identify suitable promotional services and opportunities." },
+  { n: "03", title: "Preparation", body: "Prepare promotional materials and share proposed content for approval where applicable." },
+  { n: "04", title: "Delivery", body: "Proceed with the agreed service professionally." },
 ];
 
 export function ProcessTimeline({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
@@ -82,14 +89,16 @@ export function ProcessTimeline({ headingAs = "h2" }: { headingAs?: "h1" | "h2" 
   );
 }
 
-const PORTFOLIO = [
-  { img: trailerImg, label: "Book Trailer", caption: "Cinematic storytelling that captures a book's atmosphere.", span: "md:col-span-7 md:row-span-2", aspect: "aspect-[4/5] md:aspect-auto md:h-full" },
-  { img: mockupImg, label: "3D Book Mockup", caption: "Polished displays across print and digital formats.", span: "md:col-span-5", aspect: "aspect-[4/3] md:h-full" },
-  { img: socialFeatureImg, label: "TikTok & Instagram Feature", caption: "Short-form features built for social discovery.", span: "md:col-span-5", aspect: "aspect-[4/3] md:h-full" },
-  { img: socialDesignsImg, label: "Social Media Designs", caption: "Consistent, on-brand promotional graphics.", span: "md:col-span-4", aspect: "aspect-square md:h-full" },
-  { img: websiteImg, label: "Author Website Design", caption: "A refined home for an author's books and identity.", span: "md:col-span-4", aspect: "aspect-square md:h-full" },
-  { img: goodreadsImg, label: "Goodreads Graphics", caption: "Visuals supporting Listopia and reader-list promotion.", span: "md:col-span-4", aspect: "aspect-square md:h-full" },
+const SHOWCASE_LAYOUT = [
+  { id: "trailer-cinematic", span: "md:col-span-7 md:row-span-2", aspect: "aspect-[4/5] md:aspect-auto md:h-full" },
+  { id: "mockup-set", span: "md:col-span-5", aspect: "aspect-[4/3] md:h-full" },
+  { id: "instagram-posts", span: "md:col-span-5", aspect: "aspect-[4/3] md:h-full" },
+  { id: "social-designs", span: "md:col-span-4", aspect: "aspect-square md:h-full" },
+  { id: "author-website", span: "md:col-span-4", aspect: "aspect-square md:h-full" },
+  { id: "goodreads", span: "md:col-span-4", aspect: "aspect-square md:h-full" },
 ];
+
+const SHOWCASE = SHOWCASE_LAYOUT.map((l) => ({ ...l, item: PORTFOLIO.find((p) => p.id === l.id)! }));
 
 export function PortfolioShowcase() {
   return (
@@ -101,32 +110,38 @@ export function PortfolioShowcase() {
             title="The kinds of work on offer."
             intro="A visual overview of the promotional formats available — from trailers and mockups to author websites."
           />
-          <p className="max-w-xs border-l border-gold pl-5 text-sm leading-relaxed text-muted-foreground">
-            Illustrative concepts showing the types of work offered. These are not completed client projects.
-          </p>
+          <p className="max-w-xs border-l border-gold pl-5 text-sm leading-relaxed text-muted-foreground">{PORTFOLIO_DISCLAIMER}</p>
         </div>
         <div className="mt-16 grid gap-5 md:grid-cols-12 md:auto-rows-[minmax(0,1fr)]">
-          {PORTFOLIO.map((p, i) => (
-            <Reveal key={p.label} delay={(i % 3) * 90} className={p.span}>
-              <figure className="group relative h-full overflow-hidden bg-navy">
-                <div className={`${p.aspect} w-full overflow-hidden`}>
+          {SHOWCASE.map(({ id, span, aspect, item }, i) => (
+            <Reveal key={id} delay={(i % 3) * 90} className={span}>
+              <Link to="/portfolio" className="group relative block h-full overflow-hidden bg-navy">
+                <div className={`${aspect} w-full overflow-hidden`}>
                   <img
-                    src={p.img}
-                    alt={`${p.label} — illustrative concept`}
+                    src={item.img}
+                    alt={`${item.title} — illustrative concept`}
                     loading="lazy"
-                    width={1024}
-                    height={1024}
+                    width={item.width}
+                    height={item.height}
                     className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-105"
                   />
                 </div>
-                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/95 via-navy/60 to-transparent p-6 pt-16">
-                  <p className="eyebrow text-gold">Example Format</p>
-                  <p className="mt-2 font-display text-2xl text-on-navy">{p.label}</p>
-                  <p className="mt-1 text-sm text-on-navy-muted">{p.caption}</p>
-                </figcaption>
-              </figure>
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/95 via-navy/60 to-transparent p-6 pt-16">
+                  <p className="eyebrow text-gold">{item.category}</p>
+                  <p className="mt-2 font-display text-2xl text-on-navy">{item.title}</p>
+                  <p className="mt-1 text-sm text-on-navy-muted">{item.caption}</p>
+                </div>
+              </Link>
             </Reveal>
           ))}
+        </div>
+        <div className="mt-12 flex justify-center">
+          <Link
+            to="/portfolio"
+            className="inline-flex items-center gap-3 border border-navy px-8 py-4 text-xs font-medium uppercase tracking-[0.22em] text-navy transition-colors duration-300 hover:bg-navy hover:text-on-navy"
+          >
+            Explore the Full Portfolio <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>
@@ -155,21 +170,31 @@ export function Commitment() {
   );
 }
 
+export const CONTACT_INTRO =
+  "Have a book you'd like to promote? I'd be happy to discuss your book, your goals and the promotional services that could support them.";
+
 export function ContactBand() {
   return (
     <section className="bg-ivory py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <Reveal className="flex flex-col items-start justify-between gap-10 border border-navy/15 bg-paper p-10 md:flex-row md:items-center md:p-16">
-          <div>
+        <Reveal className="relative grid gap-10 overflow-hidden bg-navy p-10 text-on-navy md:p-16 lg:grid-cols-12 lg:items-center">
+          <span className="absolute inset-3 border border-gold/30 md:inset-4" aria-hidden="true" />
+          <div className="relative lg:col-span-7">
             <p className="eyebrow text-gold">Author Enquiries</p>
-            <h2 className="mt-4 text-4xl text-navy md:text-5xl">Let's Talk About Your Book.</h2>
+            <h2 className="mt-4 text-4xl text-on-navy md:text-6xl">Contact LATIF</h2>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-on-navy-muted">{CONTACT_INTRO}</p>
           </div>
-          <Link
-            to="/contact"
-            className="inline-flex shrink-0 items-center bg-navy px-8 py-4 text-xs font-medium uppercase tracking-[0.22em] text-on-navy transition-colors duration-300 hover:bg-gold hover:text-navy"
-          >
-            Start a Conversation
-          </Link>
+          <div className="relative flex flex-col gap-5 lg:col-span-5 lg:items-end">
+            <a href={`mailto:${BRAND.email}`} className="group inline-flex items-center gap-3 font-display text-2xl text-on-navy transition-colors hover:text-gold md:text-3xl">
+              <Mail className="h-5 w-5 text-gold" aria-hidden="true" /> {BRAND.email}
+            </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-3 bg-gold px-8 py-4 text-xs font-medium uppercase tracking-[0.22em] text-navy transition-colors duration-300 hover:bg-ivory"
+            >
+              Work With Me <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
         </Reveal>
       </div>
     </section>

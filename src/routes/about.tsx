@@ -37,7 +37,7 @@ function AboutPage() {
             <Reveal delay={220} className="mt-12 grid gap-px border border-border bg-border sm:grid-cols-2">
               <div className="bg-paper p-6">
                 <p className="eyebrow text-gold">Professional Name</p>
-                <p className="mt-3 wordmark text-2xl text-navy">Latif</p>
+                <p className="mt-3 wordmark text-2xl text-navy">LATIF</p>
               </div>
               <div className="bg-paper p-6">
                 <p className="eyebrow text-gold">Associated Business Brand</p>

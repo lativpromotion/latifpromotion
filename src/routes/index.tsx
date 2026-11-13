@@ -48,7 +48,7 @@ function Hero() {
       <div className="mx-auto flex min-h-[calc(100svh-5rem)] max-w-7xl flex-col justify-center px-6 py-24 lg:px-10">
         <div className="max-w-2xl">
           <p className="wordmark animate-rise text-6xl text-on-navy md:text-8xl" style={{ animationDelay: "60ms" }}>
-            Latif
+            LATIF
           </p>
           <div className="animate-rise mt-6 space-y-1" style={{ animationDelay: "180ms" }}>
             <p className="eyebrow text-gold">Ebook Promotion Specialist</p>
@@ -72,7 +72,7 @@ function Hero() {
               to="/contact"
               className="inline-flex items-center justify-center border border-on-navy/40 px-8 py-4 text-xs font-medium uppercase tracking-[0.22em] text-on-navy transition-colors duration-300 hover:border-gold hover:text-gold"
             >
-              Start a Conversation
+              Contact LATIF
             </Link>
           </div>
           <p className="animate-rise mt-16 flex items-center gap-4 text-xs uppercase tracking-[0.28em] text-on-navy-muted" style={{ animationDelay: "720ms" }}>

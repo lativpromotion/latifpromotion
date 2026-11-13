@@ -7,6 +7,7 @@ const NAV = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
+  { to: "/portfolio", label: "Portfolio" },
   { to: "/process", label: "Our Process" },
   { to: "/contact", label: "Contact" },
 ] as const;
@@ -31,26 +32,26 @@ export function Header() {
     >
       <div className={cn("mx-auto flex max-w-7xl items-center justify-between px-6 transition-all duration-500 lg:px-10", scrolled ? "h-16" : "h-20")}>
         <Link to="/" className="group flex flex-col leading-none" aria-label="LATIF — home" onClick={() => setOpen(false)}>
-          <span className="wordmark text-2xl text-navy md:text-[1.7rem]">Latif</span>
+          <span className="wordmark text-2xl text-navy md:text-[1.7rem]">LATIF</span>
           <span className="mt-1 hidden text-[0.6rem] font-medium uppercase tracking-[0.3em] text-gold sm:block">
             Ebook Promotion Specialist
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-9 lg:flex" aria-label="Main">
+        <nav className="hidden items-center gap-8 xl:flex" aria-label="Main">
           {NAV.map((item) => (
             <Link
               key={item.to}
               to={item.to}
               activeOptions={{ exact: item.to === "/" }}
-              className="relative py-2 text-[0.8rem] font-normal uppercase tracking-[0.18em] text-charcoal/80 transition-colors hover:text-navy data-[status=active]:text-navy after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-500 hover:after:scale-x-100 data-[status=active]:after:scale-x-100"
+              className="relative whitespace-nowrap py-2 text-[0.78rem] font-normal uppercase tracking-[0.16em] text-charcoal/80 transition-colors hover:text-navy data-[status=active]:text-navy after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-500 hover:after:scale-x-100 data-[status=active]:after:scale-x-100"
             >
               {item.label}
             </Link>
           ))}
           <Link
             to="/contact"
-            className="ml-2 inline-flex items-center border border-navy bg-navy px-6 py-3 text-[0.72rem] font-medium uppercase tracking-[0.22em] text-on-navy transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-navy"
+            className="ml-2 inline-flex items-center whitespace-nowrap border border-navy bg-navy px-6 py-3 text-[0.72rem] font-medium uppercase tracking-[0.22em] text-on-navy transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-navy"
           >
             Work With Me
           </Link>
@@ -58,7 +59,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center text-navy lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center text-navy xl:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -68,7 +69,7 @@ export function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-border bg-ivory px-6 pb-8 pt-4 lg:hidden" aria-label="Mobile">
+        <nav className="border-t border-border bg-ivory px-6 pb-8 pt-4 xl:hidden" aria-label="Mobile">
           <ul className="flex flex-col">
             {NAV.map((item) => (
               <li key={item.to}>
