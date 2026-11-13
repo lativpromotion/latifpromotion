@@ -84,11 +84,11 @@ export function ProcessTimeline({ headingAs = "h2" }: { headingAs?: "h1" | "h2" 
 
 const PORTFOLIO = [
   { img: trailerImg, label: "Book Trailer", caption: "Cinematic storytelling that captures a book's atmosphere.", span: "md:col-span-7 md:row-span-2", aspect: "aspect-[4/5] md:aspect-auto md:h-full" },
-  { img: mockupImg, label: "3D Book Mockup", caption: "Polished displays across print and digital formats.", span: "md:col-span-5", aspect: "aspect-[4/3]" },
-  { img: socialFeatureImg, label: "TikTok & Instagram Feature", caption: "Short-form features built for social discovery.", span: "md:col-span-5", aspect: "aspect-[4/3]" },
-  { img: socialDesignsImg, label: "Social Media Designs", caption: "Consistent, on-brand promotional graphics.", span: "md:col-span-4", aspect: "aspect-square" },
-  { img: websiteImg, label: "Author Website Design", caption: "A refined home for an author's books and identity.", span: "md:col-span-4", aspect: "aspect-square" },
-  { img: goodreadsImg, label: "Goodreads Graphics", caption: "Visuals supporting Listopia and reader-list promotion.", span: "md:col-span-4", aspect: "aspect-square" },
+  { img: mockupImg, label: "3D Book Mockup", caption: "Polished displays across print and digital formats.", span: "md:col-span-5", aspect: "aspect-[4/3] md:h-full" },
+  { img: socialFeatureImg, label: "TikTok & Instagram Feature", caption: "Short-form features built for social discovery.", span: "md:col-span-5", aspect: "aspect-[4/3] md:h-full" },
+  { img: socialDesignsImg, label: "Social Media Designs", caption: "Consistent, on-brand promotional graphics.", span: "md:col-span-4", aspect: "aspect-square md:h-full" },
+  { img: websiteImg, label: "Author Website Design", caption: "A refined home for an author's books and identity.", span: "md:col-span-4", aspect: "aspect-square md:h-full" },
+  { img: goodreadsImg, label: "Goodreads Graphics", caption: "Visuals supporting Listopia and reader-list promotion.", span: "md:col-span-4", aspect: "aspect-square md:h-full" },
 ];
 
 export function PortfolioShowcase() {
