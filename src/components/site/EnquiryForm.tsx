@@ -98,7 +98,7 @@ export function EnquiryForm({ initialService }: { initialService?: string | unde
             control={form.control}
             name="service"
             render={({ field }) => (
-              <Select value={field.value || undefined} onValueChange={field.onChange}>
+              <Select value={field.value ?? ""} onValueChange={field.onChange}>
                 <SelectTrigger id="service" className={cn(fieldClass, "w-full justify-between")}>
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
