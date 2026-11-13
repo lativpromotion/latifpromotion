@@ -145,11 +145,13 @@ function RootComponent() {
       >
         Skip to content
       </a>
-      <Header />
-      <main id="main">
-        <Outlet />
-      </main>
-      <Footer />
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main id="main" className="flex-1">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
     </QueryClientProvider>
   );
 }

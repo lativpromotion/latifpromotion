@@ -33,7 +33,7 @@ export function Footer() {
         </div>
         <div className="mt-16 flex flex-col gap-3 border-t border-on-navy/15 pt-8 text-xs text-on-navy-muted md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} LATIF · {BRAND.business}</p>
-          <p className="tracking-[0.2em] uppercase">Home | About | Services | Contact</p>
+          <p>{BRAND.title}</p>
         </div>
       </div>
     </footer>
