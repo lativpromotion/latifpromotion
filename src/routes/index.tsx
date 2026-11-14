@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import heroImg from "@/assets/hero-books.jpg";
-import aboutImg from "@/assets/about-desk.jpg";
+import { LatifPortrait } from "@/components/site/LatifPortrait";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Commitment, ContactBand, PortfolioShowcase, ProcessTimeline, WhyChoose } from "@/components/site/sections";
@@ -90,13 +90,15 @@ function AboutTeaser() {
     <section className="bg-ivory py-24 md:py-32">
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-12 lg:px-10">
         <Reveal className="lg:col-span-5">
-          <div className="relative">
-            <img src={aboutImg} alt="An open notebook and fountain pen on a writer's desk beside ivory books" loading="lazy" width={1024} height={1280} className="aspect-[4/5] w-full object-cover" />
-            <span className="absolute -bottom-5 -right-5 -z-10 hidden h-full w-full border border-gold md:block" aria-hidden="true" />
-          </div>
+          <LatifPortrait frameSide="right" />
         </Reveal>
         <div className="lg:col-span-6 lg:col-start-7">
           <SectionHeading eyebrow="About" title="Meet LATIF" />
+          <Reveal delay={60} className="mt-8 border-l border-gold pl-5">
+            <p className="wordmark text-3xl text-navy">LATIF</p>
+            <p className="mt-2 text-xs uppercase leading-relaxed tracking-[0.22em] text-gold">Ebook Promotion Specialist | Author Outreach &amp; Book Marketing</p>
+            <p className="mt-3 text-sm text-muted-foreground">Associated business brand · <span className="font-display text-base text-navy">Fourth Group &amp; Co.</span></p>
+          </Reveal>
           <Reveal delay={120}>
             <p className="mt-8 text-lg leading-relaxed text-charcoal">
               LATIF is an Ebook Promotion Specialist focused on helping authors present their books professionally and explore meaningful promotional opportunities.
