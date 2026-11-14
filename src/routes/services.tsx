@@ -32,7 +32,7 @@ function ServicesPage() {
           <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-2">
             {SERVICES.map((s, i) => (
               <Fragment key={s.slug}>
-                <Reveal delay={(i % 2) * 90} className={hasPackageCards(s) ? "md:col-span-2" : undefined}>
+                <Reveal delay={(i % 2) * 90} className={hasPackageCards(s) ? "md:col-span-2" : ""}>
                   <ServiceCard service={s} />
                 </Reveal>
                 {/* Fills the space beside Book Mockup Design so the full-width packages card starts on a fresh row. */}
