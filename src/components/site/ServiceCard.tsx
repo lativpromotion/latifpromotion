@@ -29,7 +29,7 @@ function PackageCard({ service, pkg }: { service: Service; pkg: ServicePackage }
       <div className="mt-auto pt-7">
         <Link
           to="/contact"
-          search={{ service: service.slug, package: pkg.slug }}
+          search={pkg.slug ? { service: service.slug, package: pkg.slug } : { service: service.slug }}
           className="inline-flex w-full items-center justify-between gap-3 bg-navy px-5 py-4 text-[0.68rem] font-medium uppercase tracking-[0.18em] text-on-navy transition-colors duration-300 hover:bg-gold hover:text-navy"
           aria-label={`${service.packageCta ?? service.cta}: ${pkg.label} ${pkg.price}`}
         >
