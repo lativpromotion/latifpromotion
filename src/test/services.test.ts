@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { SERVICES, getService } from "@/lib/services";
+import { SERVICES, describePackage, getPackage, getService } from "@/lib/services";
 import { enquirySchema } from "@/lib/enquiry-schema";
 
 const prices = (slug: string) => {
@@ -26,10 +26,25 @@ describe("service pricing", () => {
   it("book mockup is $75", () => expect(prices("book-mockup")).toEqual(["$75"]));
   it("social media management is $45 / $85 / $155", () => {
     expect(prices("social-media-management")).toEqual([
-      "1-week management: $45",
-      "2-week management: $85",
-      "1-month management: $155",
+      "One-Week Management: $45",
+      "Two-Week Management: $85",
+      "One-Month Management: $155",
     ]);
+  });
+  it("one-week management includes 6 static posts and 4 reels", () => {
+    expect(getPackage("social-media-management", "one-week")?.includes).toEqual([{ count: 6, item: "Static Posts" }, { count: 4, item: "Reels" }]);
+  });
+  it("two-week management includes 12 static posts and 8 reels", () => {
+    expect(getPackage("social-media-management", "two-week")?.includes).toEqual([{ count: 12, item: "Static Posts" }, { count: 8, item: "Reels" }]);
+  });
+  it("one-month management includes 21 static posts and 9 reels", () => {
+    expect(getPackage("social-media-management", "one-month")?.includes).toEqual([{ count: 21, item: "Static Posts" }, { count: 9, item: "Reels" }]);
+  });
+  it("a package link names the chosen package for the enquiry", () => {
+    expect(describePackage(getPackage("social-media-management", "one-month")!)).toBe("One-Month Management ($155 — 21 Static Posts, 9 Reels)");
+  });
+  it("ignores a package that belongs to a different service", () => {
+    expect(getPackage("book-trailer", "one-week")).toBeUndefined();
   });
   it("website design is $845", () => expect(prices("website-design")).toEqual(["$845"]));
   it("website redesign is $455", () => expect(prices("website-redesign")).toEqual(["$455"]));

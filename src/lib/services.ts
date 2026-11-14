@@ -1,4 +1,13 @@
-export type ServicePackage = { label: string; price: string };
+export type PackageItem = { count: number; item: string };
+
+export type ServicePackage = {
+  label: string;
+  price: string;
+  /** URL id used in /contact?service=<slug>&package=<slug> to identify the chosen package. */
+  slug?: string;
+  /** Deliverables, shown exactly as supplied. */
+  includes?: PackageItem[];
+};
 
 export type Service = {
   slug: string;
@@ -11,6 +20,8 @@ export type Service = {
   priceNote?: string;
   packages?: ServicePackage[];
   cta: string;
+  /** Button label on each package card, when packages have their own enquiry button. */
+  packageCta?: string;
 };
 
 export const SERVICES: Service[] = [
@@ -53,11 +64,12 @@ export const SERVICES: Service[] = [
     description:
       "Social media management and content support designed to help authors maintain a consistent professional online presence.",
     packages: [
-      { label: "1-week management", price: "$45" },
-      { label: "2-week management", price: "$85" },
-      { label: "1-month management", price: "$155" },
+      { slug: "one-week", label: "One-Week Management", price: "$45", includes: [{ count: 6, item: "Static Posts" }, { count: 4, item: "Reels" }] },
+      { slug: "two-week", label: "Two-Week Management", price: "$85", includes: [{ count: 12, item: "Static Posts" }, { count: 8, item: "Reels" }] },
+      { slug: "one-month", label: "One-Month Management", price: "$155", includes: [{ count: 21, item: "Static Posts" }, { count: 9, item: "Reels" }] },
     ],
     cta: "Discuss Social Media Management",
+    packageCta: "Enquire About This Package",
   },
   {
     slug: "website-design",
@@ -105,6 +117,17 @@ export const SERVICE_SLUGS = SERVICES.map((s) => s.slug) as [string, ...string[]
 
 export function getService(slug: string | undefined) {
   return SERVICES.find((s) => s.slug === slug);
+}
+
+export function getPackage(serviceSlug: string | undefined, packageSlug: string | undefined) {
+  if (!packageSlug) return undefined;
+  return getService(serviceSlug)?.packages?.find((p) => p.slug === packageSlug);
+}
+
+/** e.g. "One-Week Management ($45 — 6 Static Posts, 4 Reels)" */
+export function describePackage(p: ServicePackage) {
+  const items = p.includes?.map((i) => `${i.count} ${i.item}`).join(", ");
+  return `${p.label} (${p.price}${items ? ` — ${items}` : ""})`;
 }
 
 export const BRAND = {
