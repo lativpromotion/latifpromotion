@@ -9,13 +9,15 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { enquirySchema, type EnquiryInput } from "@/lib/enquiry-schema";
 import { submitEnquiry } from "@/lib/enquiry.functions";
-import { BRAND, SERVICES } from "@/lib/services";
+import { BRAND, SERVICES, describePackage, getPackage } from "@/lib/services";
 import { cn } from "@/lib/utils";
 
 const fieldClass =
   "h-12 rounded-none border-0 border-b border-input bg-transparent px-0 text-base shadow-none focus-visible:border-gold focus-visible:ring-0";
 
-export function EnquiryForm({ initialService }: { initialService?: string | undefined }) {
+export function EnquiryForm({ initialService, initialPackage }: { initialService?: string | undefined; initialPackage?: string | undefined }) {
+  const chosenPackage = getPackage(initialService, initialPackage);
+  const packageLine = chosenPackage ? `Selected package: ${describePackage(chosenPackage)}` : "";
   const send = useServerFn(submitEnquiry);
   const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
   const [serverError, setServerError] = useState<string | null>(null);
@@ -28,7 +30,7 @@ export function EnquiryForm({ initialService }: { initialService?: string | unde
       bookTitle: "",
       authorName: "",
       service: (initialService ?? "") as EnquiryInput["service"],
-      message: "",
+      message: packageLine ? `${packageLine}\n\n` : "",
       company: "",
     },
   });
@@ -40,7 +42,10 @@ export function EnquiryForm({ initialService }: { initialService?: string | unde
   const onSubmit = form.handleSubmit(async (values) => {
     setServerError(null);
     try {
-      const res = await send({ data: values });
+      // Keep the chosen package on record even if the visitor edits the message.
+      const keepPackage = packageLine && values.service === initialService && !values.message.includes(chosenPackage!.label);
+      const data = keepPackage ? { ...values, message: `${packageLine}\n\n${values.message}` } : values;
+      const res = await send({ data });
       if (res.ok) {
         setStatus("sent");
         form.reset({ ...form.getValues(), message: "", bookTitle: "", authorName: "" });
@@ -77,9 +82,21 @@ export function EnquiryForm({ initialService }: { initialService?: string | unde
   }
 
   const err = form.formState.errors;
+  const showPackage = chosenPackage && form.watch("service") === initialService;
 
   return (
     <form onSubmit={onSubmit} noValidate className="border border-border bg-paper p-8 shadow-card md:p-12" aria-label="Author enquiry form">
+      {showPackage && (
+        <div className="mb-10 flex flex-col gap-1 border-l-2 border-gold bg-ivory px-5 py-4" role="note">
+          <span className="eyebrow text-[0.62rem] text-gold">Selected Package</span>
+          <span className="font-display text-2xl text-navy">
+            {chosenPackage.label} — {chosenPackage.price}
+          </span>
+          {chosenPackage.includes && (
+            <span className="text-sm text-muted-foreground">{chosenPackage.includes.map((i) => `${i.count} ${i.item}`).join(" · ")}</span>
+          )}
+        </div>
+      )}
       <div className="grid gap-x-8 gap-y-8 md:grid-cols-2">
         <Field label="Full Name" id="fullName" error={err.fullName?.message}>
           <Input id="fullName" autoComplete="name" className={fieldClass} {...form.register("fullName")} />

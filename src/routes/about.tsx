@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import aboutImg from "@/assets/about-desk.jpg";
+import { LatifPortrait } from "@/components/site/LatifPortrait";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Commitment, ContactBand, WhyChoose } from "@/components/site/sections";
@@ -20,9 +20,13 @@ function AboutPage() {
   return (
     <>
       <section className="bg-ivory py-20 md:py-28">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-12 lg:px-10">
+        <div className="mx-auto grid max-w-7xl items-start gap-16 px-6 lg:grid-cols-12 lg:px-10">
           <div className="lg:col-span-6">
             <SectionHeading as="h1" eyebrow="About" title="Meet LATIF" />
+            <Reveal delay={60} className="mt-8 border-l border-gold pl-5">
+              <p className="wordmark text-3xl text-navy">LATIF</p>
+              <p className="mt-2 text-xs uppercase leading-relaxed tracking-[0.22em] text-gold">Ebook Promotion Specialist | Author Outreach &amp; Book Marketing</p>
+            </Reveal>
             <Reveal delay={120} className="mt-10 space-y-6 text-lg leading-relaxed text-charcoal">
               <p>
                 LATIF is an Ebook Promotion Specialist focused on helping authors present their books professionally and explore meaningful promotional opportunities.
@@ -38,6 +42,7 @@ function AboutPage() {
               <div className="bg-paper p-6">
                 <p className="eyebrow text-gold">Professional Name</p>
                 <p className="mt-3 wordmark text-2xl text-navy">LATIF</p>
+                <p className="mt-2 text-sm text-muted-foreground">Ebook Promotion Specialist</p>
               </div>
               <div className="bg-paper p-6">
                 <p className="eyebrow text-gold">Associated Business Brand</p>
@@ -45,11 +50,8 @@ function AboutPage() {
               </div>
             </Reveal>
           </div>
-          <Reveal className="lg:col-span-5 lg:col-start-8">
-            <div className="relative">
-              <img src={aboutImg} alt="An open notebook and fountain pen on a writer's desk beside ivory books" width={1024} height={1280} className="aspect-[4/5] w-full object-cover" />
-              <span className="absolute -bottom-5 -left-5 -z-10 hidden h-full w-full border border-gold md:block" aria-hidden="true" />
-            </div>
+          <Reveal className="lg:sticky lg:top-32 lg:col-span-5 lg:col-start-8">
+            <LatifPortrait frameSide="left" eager />
           </Reveal>
         </div>
       </section>

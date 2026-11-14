@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, BookOpen, ClipboardCheck, Eye, Lightbulb, Mail, MessagesSquare, Receipt, Target } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
+import { itemAlt } from "./Lightbox";
 import { Reveal } from "./Reveal";
+import { MockupSamplesStrip } from "./MockupSamples";
 import { PORTFOLIO, PORTFOLIO_DISCLAIMER } from "@/lib/portfolio";
 import { BRAND } from "@/lib/services";
 
@@ -91,7 +93,7 @@ export function ProcessTimeline({ headingAs = "h2" }: { headingAs?: "h1" | "h2" 
 
 const SHOWCASE_LAYOUT = [
   { id: "trailer-cinematic", span: "md:col-span-7 md:row-span-2", aspect: "aspect-[4/5] md:aspect-auto md:h-full" },
-  { id: "mockup-set", span: "md:col-span-5", aspect: "aspect-[4/3] md:h-full" },
+  { id: "trailer-edit", span: "md:col-span-5", aspect: "aspect-[4/3] md:h-full" },
   { id: "instagram-posts", span: "md:col-span-5", aspect: "aspect-[4/3] md:h-full" },
   { id: "social-designs", span: "md:col-span-4", aspect: "aspect-square md:h-full" },
   { id: "author-website", span: "md:col-span-4", aspect: "aspect-square md:h-full" },
@@ -119,7 +121,7 @@ export function PortfolioShowcase() {
                 <div className={`${aspect} w-full overflow-hidden`}>
                   <img
                     src={item.img}
-                    alt={`${item.title} — illustrative concept`}
+                    alt={itemAlt(item)}
                     loading="lazy"
                     width={item.width}
                     height={item.height}
@@ -135,6 +137,7 @@ export function PortfolioShowcase() {
             </Reveal>
           ))}
         </div>
+        <MockupSamplesStrip />
         <div className="mt-12 flex justify-center">
           <Link
             to="/portfolio"

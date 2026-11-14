@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Reveal } from "@/components/site/Reveal";
-import { ServiceCard } from "@/components/site/ServiceCard";
+import { MockupSamplesTile } from "@/components/site/MockupSamples";
+import { ServiceCard, hasPackageCards } from "@/components/site/ServiceCard";
+import { Fragment } from "react";
 import { ContactBand } from "@/components/site/sections";
 import { SERVICES } from "@/lib/services";
 import { pageMeta } from "@/lib/seo";
@@ -29,9 +31,17 @@ function ServicesPage() {
           />
           <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-2">
             {SERVICES.map((s, i) => (
-              <Reveal key={s.slug} delay={(i % 2) * 90}>
-                <ServiceCard service={s} />
-              </Reveal>
+              <Fragment key={s.slug}>
+                <Reveal delay={(i % 2) * 90} className={hasPackageCards(s) ? "md:col-span-2" : undefined}>
+                  <ServiceCard service={s} />
+                </Reveal>
+                {/* Fills the space beside Book Mockup Design so the full-width packages card starts on a fresh row. */}
+                {s.slug === "book-mockup" && (
+                  <Reveal delay={90}>
+                    <MockupSamplesTile />
+                  </Reveal>
+                )}
+              </Fragment>
             ))}
           </div>
           <p className="mt-12 max-w-2xl border-l border-gold pl-5 text-sm leading-relaxed text-muted-foreground">

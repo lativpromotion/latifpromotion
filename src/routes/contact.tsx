@@ -4,15 +4,17 @@ import { EnquiryForm } from "@/components/site/EnquiryForm";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CONTACT_INTRO } from "@/components/site/sections";
-import { BRAND, SERVICE_SLUGS } from "@/lib/services";
+import { BRAND, SERVICE_SLUGS, getPackage } from "@/lib/services";
 import { pageMeta } from "@/lib/seo";
 
-type ContactSearch = { service?: string };
+type ContactSearch = { service?: string; package?: string };
 
 export const Route = createFileRoute("/contact")({
   validateSearch: (search: Record<string, unknown>): ContactSearch => {
     const s = search["service"];
-    return typeof s === "string" && (SERVICE_SLUGS as string[]).includes(s) ? { service: s } : {};
+    if (typeof s !== "string" || !(SERVICE_SLUGS as string[]).includes(s)) return {};
+    const p = search["package"];
+    return typeof p === "string" && getPackage(s, p) ? { service: s, package: p } : { service: s };
   },
   head: () => ({
     meta: pageMeta(
@@ -24,7 +26,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
-  const { service } = Route.useSearch();
+  const { service, package: pkg } = Route.useSearch();
   return (
     <section className="bg-ivory py-20 md:py-28">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-12 lg:px-10">
@@ -85,7 +87,7 @@ function ContactPage() {
           </Reveal>
         </div>
         <Reveal delay={100} className="lg:col-span-7">
-          <EnquiryForm key={service ?? "none"} initialService={service} />
+          <EnquiryForm key={`${service ?? "none"}-${pkg ?? ""}`} initialService={service} initialPackage={pkg} />
         </Reveal>
       </div>
     </section>
