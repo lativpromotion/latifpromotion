@@ -19,7 +19,6 @@ export function LatifPortrait({ frameSide = "right", eager = false, className }:
             loading={eager ? "eager" : "lazy"}
             className="aspect-[4/5] w-full object-cover object-[50%_30%]"
           />
-          <span className="pointer-events-none absolute inset-5 border border-paper/40" aria-hidden="true" />
         </div>
       </div>
       <figcaption className="mt-8 flex items-center gap-4">
