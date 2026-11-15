@@ -56,6 +56,25 @@ export function Footer() {
               <li><a href={`mailto:${BRAND.generalEmail}`} className="text-on-navy-muted transition-colors hover:text-gold">{BRAND.generalEmail}</a></li>
               <li><a href={BRAND.websiteUrl} className="text-on-navy-muted transition-colors hover:text-gold" target="_blank" rel="noreferrer">{BRAND.website}</a></li>
             </ul>
+            <p className="mt-8 eyebrow text-[0.62rem] text-on-navy-muted">Connect with LATIF</p>
+            <ul className="mt-4 flex items-center gap-3">
+              {SOCIALS.map((s) => {
+                const Icon = SOCIAL_ICONS[s.platform];
+                return (
+                  <li key={s.platform}>
+                    <a
+                      href={s.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`LATIF on ${s.name} (${s.handle})`}
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-on-navy/25 text-on-navy-muted transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-navy"
+                    >
+                      <Icon className="h-4 w-4" />
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
         <div className="mt-16 flex flex-col gap-3 border-t border-on-navy/15 pt-8 text-xs text-on-navy-muted md:flex-row md:items-center md:justify-between">
