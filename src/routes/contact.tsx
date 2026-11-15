@@ -93,5 +93,7 @@ function ContactPage() {
         </Reveal>
       </div>
     </section>
+    <SocialConnect />
+    </>
   );
 }
