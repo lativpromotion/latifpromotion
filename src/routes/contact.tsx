@@ -3,6 +3,7 @@ import { Mail, Globe } from "lucide-react";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
+import { SocialConnect } from "@/components/site/SocialConnect";
 import { CONTACT_INTRO } from "@/components/site/sections";
 import { BRAND, SERVICE_SLUGS, getPackage } from "@/lib/services";
 import { pageMeta } from "@/lib/seo";
@@ -28,6 +29,7 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   const { service, package: pkg } = Route.useSearch();
   return (
+    <>
     <section className="bg-ivory py-20 md:py-28">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-12 lg:px-10">
         <div className="lg:col-span-5">
@@ -91,5 +93,7 @@ function ContactPage() {
         </Reveal>
       </div>
     </section>
+    <SocialConnect />
+    </>
   );
 }

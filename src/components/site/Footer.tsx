@@ -1,5 +1,20 @@
 import { Link } from "@tanstack/react-router";
-import { BRAND } from "@/lib/services";
+import { Facebook, Instagram } from "lucide-react";
+import { BRAND, SOCIALS, type SocialPlatform } from "@/lib/services";
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+    </svg>
+  );
+}
+
+const SOCIAL_ICONS: Record<SocialPlatform, ({ className }: { className?: string }) => React.ReactNode> = {
+  facebook: ({ className }) => <Facebook className={className} strokeWidth={1.6} aria-hidden="true" />,
+  instagram: ({ className }) => <Instagram className={className} strokeWidth={1.6} aria-hidden="true" />,
+  tiktok: TikTokIcon,
+};
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -40,6 +55,25 @@ export function Footer() {
             <ul className="mt-3 space-y-2 text-sm">
               <li><a href={`mailto:${BRAND.generalEmail}`} className="text-on-navy-muted transition-colors hover:text-gold">{BRAND.generalEmail}</a></li>
               <li><a href={BRAND.websiteUrl} className="text-on-navy-muted transition-colors hover:text-gold" target="_blank" rel="noreferrer">{BRAND.website}</a></li>
+            </ul>
+            <p className="mt-8 eyebrow text-[0.62rem] text-on-navy-muted">Connect with LATIF</p>
+            <ul className="mt-4 flex items-center gap-3">
+              {SOCIALS.map((s) => {
+                const Icon = SOCIAL_ICONS[s.platform];
+                return (
+                  <li key={s.platform}>
+                    <a
+                      href={s.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`LATIF on ${s.name} (${s.handle})`}
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-on-navy/25 text-on-navy-muted transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-navy"
+                    >
+                      <Icon className="h-4 w-4" />
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

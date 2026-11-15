@@ -141,3 +141,12 @@ export const BRAND = {
   website: "fourthgroup.co",
   websiteUrl: "https://fourthgroup.co",
 } as const;
+
+export type SocialPlatform = "facebook" | "instagram" | "tiktok";
+
+/** LATIF's official social media accounts — the only ones that may appear on the site. */
+export const SOCIALS: { platform: SocialPlatform; name: string; handle: string; url: string }[] = [
+  { platform: "facebook", name: "Facebook", handle: "LATIF", url: "https://www.facebook.com/profile.php?id=61596314170979" },
+  { platform: "instagram", name: "Instagram", handle: "@mrlatifs", url: "https://www.instagram.com/mrlatifs" },
+  { platform: "tiktok", name: "TikTok", handle: "@mrlatifs", url: "https://www.tiktok.com/@mrlatifs" },
+];
