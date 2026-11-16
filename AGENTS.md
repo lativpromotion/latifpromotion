@@ -34,4 +34,4 @@ use the editor.
 - Each nav section (Home, About, Services, Portfolio, Process, Contact) is its own route with its own `head()`; service CTAs link to `/contact?service=<slug>` to preselect the form.
 - Enquiries are validated with the shared zod schema in `src/lib/enquiry-schema.ts` and inserted by the `submitEnquiry` server function using the admin client; `contact_submissions` has RLS on with no browser policies, so visitors can never read submissions.
 - `vite.config.ts` pre-bundles client deps via `optimizeDeps.include`; add any new client package there so mid-session re-optimization never loads a duplicate React.
-- Portfolio items live only in `src/lib/portfolio.ts` (home showcase and /portfolio both read it) so the illustrative-only labelling stays consistent.
+- Portfolio items (concepts, uploaded mockup samples and uploaded trailer videos) live only in `src/lib/portfolio.ts` so labelling stays consistent; uploaded media is served unmodified as CDN assets.

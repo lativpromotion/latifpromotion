@@ -39,9 +39,9 @@ export function MockupSamplesGallery() {
     <section id="mockup-samples" className="scroll-mt-28">
       <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <SectionHeading
-          eyebrow="Book Mockup Samples"
-          title="Covers, presented in three dimensions."
-          intro="Book mockup presentations that let a cover be seen as readers would hold it. Open any sample to view it in full."
+          eyebrow="Category 01 · Design"
+          title="Book Mockup Designs"
+          intro="Covers, presented in three dimensions — book mockup presentations that let a cover be seen as readers would hold it. Open any sample to view it in full."
         />
         <p className="max-w-xs border-l border-gold pl-5 text-sm leading-relaxed text-muted-foreground">{MOCKUP_SAMPLES_NOTE}</p>
       </div>
