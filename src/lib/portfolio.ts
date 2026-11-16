@@ -10,7 +10,6 @@ import lastSecretMockups from "@/assets/mockup-last-secret-collection.webp.asset
 import coverCollectionMockups from "@/assets/mockup-cover-collection.webp.asset.json";
 import loveMockup from "@/assets/mockup-love-in-every-chapter.webp.asset.json";
 import dragonMockup from "@/assets/mockup-dragons-legacy.webp.asset.json";
-
 import rippedApartVideo from "@/assets/trailers/trailer-ripped-apart.mp4.asset.json";
 import rippedApartPoster from "@/assets/trailers/trailer-ripped-apart-poster.jpg.asset.json";
 import throneVideo from "@/assets/trailers/trailer-throne-from-the-ashes.mp4.asset.json";
