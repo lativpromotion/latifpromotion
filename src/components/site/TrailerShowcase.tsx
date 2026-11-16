@@ -62,7 +62,7 @@ export function TrailerShowcase() {
   return (
     <section id="trailer-showcase" ref={root} className="scroll-mt-28">
       <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-        <SectionHeading eyebrow={TRAILER_SHOWCASE_TITLE} title={TRAILER_SHOWCASE_TITLE} intro={TRAILER_SHOWCASE_SUBTITLE} />
+        <SectionHeading eyebrow="Category 02 · Video" title={TRAILER_SHOWCASE_TITLE} intro={TRAILER_SHOWCASE_SUBTITLE} />
         <p className="flex max-w-xs items-start gap-3 border-l border-gold pl-5 text-sm leading-relaxed text-muted-foreground">
           <Film className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
           Book trailer samples by LATIF. Press play to watch each trailer here.
