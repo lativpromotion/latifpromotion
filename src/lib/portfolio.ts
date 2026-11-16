@@ -11,6 +11,17 @@ import coverCollectionMockups from "@/assets/mockup-cover-collection.webp.asset.
 import loveMockup from "@/assets/mockup-love-in-every-chapter.webp.asset.json";
 import dragonMockup from "@/assets/mockup-dragons-legacy.webp.asset.json";
 
+import rippedApartVideo from "@/assets/trailers/trailer-ripped-apart.mp4.asset.json";
+import rippedApartPoster from "@/assets/trailers/trailer-ripped-apart-poster.jpg.asset.json";
+import throneVideo from "@/assets/trailers/trailer-throne-from-the-ashes.mp4.asset.json";
+import thronePoster from "@/assets/trailers/trailer-throne-from-the-ashes-poster.jpg.asset.json";
+import darknessVideo from "@/assets/trailers/trailer-a-beautiful-darkness.mp4.asset.json";
+import darknessPoster from "@/assets/trailers/trailer-a-beautiful-darkness-poster.jpg.asset.json";
+import kingVideo from "@/assets/trailers/trailer-king-of-ai.mp4.asset.json";
+import kingPoster from "@/assets/trailers/trailer-king-of-ai-poster.jpg.asset.json";
+import alienVideo from "@/assets/trailers/trailer-alien-planet-homemaking.mp4.asset.json";
+import alienPoster from "@/assets/trailers/trailer-alien-planet-homemaking-poster.jpg.asset.json";
+
 export const PORTFOLIO_CATEGORIES = [
   "Book Trailers",
   "3D Book Mockups",
@@ -66,3 +77,30 @@ export const CONCEPT_CATEGORIES = PORTFOLIO_CATEGORIES.filter((c) => PORTFOLIO.s
 
 export const PORTFOLIO_DISCLAIMER =
   "Illustrative concepts showing the types of work offered. These are not completed client projects.";
+
+
+export type TrailerSample = {
+  id: string;
+  title: string;
+  /** Running time as m:ss. */
+  duration: string;
+  src: string;
+  poster: string;
+  width: number;
+  height: number;
+};
+
+/**
+ * LATIF's own uploaded book trailers, served exactly as supplied (never re-encoded,
+ * trimmed, merged or replaced). Posters are unedited frames taken from each video.
+ */
+export const TRAILER_SAMPLES: TrailerSample[] = [
+  { id: "ripped-apart", title: "Ripped Apart: Quantum Twins", duration: "2:01", src: rippedApartVideo.url, poster: rippedApartPoster.url, width: 1024, height: 576 },
+  { id: "throne-from-the-ashes", title: "Throne from the Ashes", duration: "0:45", src: throneVideo.url, poster: thronePoster.url, width: 1024, height: 576 },
+  { id: "a-beautiful-darkness", title: "A Beautiful Darkness", duration: "0:37", src: darknessVideo.url, poster: darknessPoster.url, width: 1160, height: 576 },
+  { id: "king-of-ai", title: "King of AI", duration: "0:31", src: kingVideo.url, poster: kingPoster.url, width: 1280, height: 568 },
+  { id: "alien-planet-homemaking", title: "Alien Planet Homemaking", duration: "1:13", src: alienVideo.url, poster: alienPoster.url, width: 576, height: 1024 },
+];
+
+export const TRAILER_SHOWCASE_TITLE = "Book Trailer Showcase";
+export const TRAILER_SHOWCASE_SUBTITLE = "Bringing stories to life through creative and engaging book trailers.";
