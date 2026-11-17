@@ -15,6 +15,13 @@
       "when": 1794824305592,
       "tag": "0001_allow_public_enquiry_insert",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794891869440,
+      "tag": "0002_noop_check",
+      "breakpoints": true
     }
   ]
 }
