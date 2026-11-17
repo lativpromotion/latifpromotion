@@ -2,9 +2,9 @@
 
 hey i want to build a portfolio website 
 
-# PROJECT: PREMIUM AUTHOR PROMOTION & EBOOK MARKETING PORTFOLIO WEBSITE
+# PROJECT: PREMIUM AUTHOR PROMOTION & BOOK MARKETING PORTFOLIO WEBSITE
 
-Build a sophisticated, premium, fully responsive professional portfolio website for LATIF, an Ebook Promotion Specialist specializing in author outreach, book marketing and creative promotional services.
+Build a sophisticated, premium, fully responsive professional portfolio website for LATIF, an Book Promotion Specialist specializing in author outreach, book marketing and creative promotional services.
 
 The website must look like an established international book marketing and publishing agency, not a basic freelancer template.
 
@@ -13,7 +13,7 @@ The website must look like an established international book marketing and publi
 Primary professional name: LATIF
 
 Professional title:
-Ebook Promotion Specialist | Author Outreach & Book Marketing
+Book Promotion Specialist | Author Outreach & Book Marketing
 
 Associated business brand:
 Fourth Group & Co.
@@ -87,7 +87,7 @@ Main brand:
 LATIF
 
 Professional title:
-EBOOK PROMOTION SPECIALIST
+BOOK PROMOTION SPECIALIST
 AUTHOR OUTREACH & BOOK MARKETING
 
 Main headline:
@@ -114,7 +114,7 @@ Section heading:
 
 Write a professional introduction:
 
-"LATIF is an Ebook Promotion Specialist focused on helping authors present their books professionally and explore meaningful promotional opportunities.
+"LATIF is an Book Promotion Specialist focused on helping authors present their books professionally and explore meaningful promotional opportunities.
 
 Through author outreach, creative book marketing and digital promotional services, LATIF works to help authors strengthen their book presentation, improve discoverability and introduce their work to potential readers.
 
@@ -336,7 +336,7 @@ Display:
 
 LATIF
 
-Ebook Promotion Specialist | Author Outreach & Book Marketing
+Book Promotion Specialist | Author Outreach & Book Marketing
 
 Fourth Group & Co.
 

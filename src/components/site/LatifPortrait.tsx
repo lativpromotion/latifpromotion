@@ -13,7 +13,7 @@ export function LatifPortrait({ frameSide = "right", eager = false, className }:
         <div className="relative bg-paper p-2 shadow-card">
           <img
             src={portrait}
-            alt="Portrait of LATIF, Ebook Promotion Specialist"
+            alt="Portrait of LATIF, Book Promotion Specialist"
             width={1536}
             height={1536}
             loading={eager ? "eager" : "lazy"}
@@ -24,7 +24,7 @@ export function LatifPortrait({ frameSide = "right", eager = false, className }:
       <figcaption className="mt-8 flex items-center gap-4">
         <span className="h-px w-10 bg-gold" aria-hidden="true" />
         <span className="wordmark text-lg text-navy">LATIF</span>
-        <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Ebook Promotion Specialist</span>
+        <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Book Promotion Specialist</span>
       </figcaption>
     </figure>
   );

@@ -34,7 +34,7 @@ export function Header() {
         <Link to="/" className="group flex flex-col leading-none" aria-label="LATIF — home" onClick={() => setOpen(false)}>
           <span className="wordmark text-2xl text-navy md:text-[1.7rem]">LATIF</span>
           <span className="mt-1 hidden text-[0.6rem] font-medium uppercase tracking-[0.3em] text-gold sm:block">
-            Ebook Promotion Specialist
+            Book Promotion Specialist
           </span>
         </Link>
 

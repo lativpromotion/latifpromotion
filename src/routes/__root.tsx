@@ -83,15 +83,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "LATIF — Ebook Promotion Specialist" },
+      { title: "LATIF — Book Promotion Specialist" },
       {
         name: "description",
-        content: "LATIF, Ebook Promotion Specialist: author outreach and book marketing services with Fourth Group & Co.",
+        content: "LATIF, Book Promotion Specialist: author outreach and book marketing services with Fourth Group & Co.",
       },
       { name: "author", content: "LATIF" },
       { name: "theme-color", content: "#101D32" },
       { property: "og:site_name", content: "LATIF" },
-      { property: "og:title", content: "LATIF — Ebook Promotion Specialist" },
+      { property: "og:title", content: "LATIF — Book Promotion Specialist" },
       {
         property: "og:description",
         content: "Author outreach and book marketing services with Fourth Group & Co.",
