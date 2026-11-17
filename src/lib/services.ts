@@ -132,7 +132,7 @@ export function describePackage(p: ServicePackage) {
 
 export const BRAND = {
   name: "LATIF",
-  title: "Ebook Promotion Specialist | Author Outreach & Book Marketing",
+  title: "Book Promotion Specialist | Author Outreach & Book Marketing",
   business: "Fourth Group & Co.",
   /** Primary contact email — LATIF's personal professional address. */
   email: "latif@fourthgroup.co",

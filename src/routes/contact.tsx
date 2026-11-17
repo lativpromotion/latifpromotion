@@ -19,7 +19,7 @@ export const Route = createFileRoute("/contact")({
   },
   head: () => ({
     meta: pageMeta(
-      "Contact LATIF — Ebook Promotion Specialist",
+      "Contact LATIF — Book Promotion Specialist",
       "Email LATIF at latif@fourthgroup.co or send an enquiry about book trailers, mockups, social features, author websites, Goodreads promotion and more.",
     ),
   }),

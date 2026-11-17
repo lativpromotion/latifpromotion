@@ -11,7 +11,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: pageMeta(
-      "LATIF — Ebook Promotion Specialist | Author Outreach & Book Marketing",
+      "LATIF — Book Promotion Specialist | Author Outreach & Book Marketing",
       "Every book deserves to be discovered. LATIF helps authors showcase their books through creative promotion, professional visuals and thoughtful book marketing.",
     ),
   }),
@@ -51,7 +51,7 @@ function Hero() {
             LATIF
           </p>
           <div className="animate-rise mt-6 space-y-1" style={{ animationDelay: "180ms" }}>
-            <p className="eyebrow text-gold">Ebook Promotion Specialist</p>
+            <p className="eyebrow text-gold">Book Promotion Specialist</p>
             <p className="eyebrow text-on-navy-muted">Author Outreach &amp; Book Marketing</p>
           </div>
           <span className="gold-rule animate-rise mt-10" style={{ animationDelay: "280ms" }} aria-hidden="true" />
@@ -96,12 +96,12 @@ function AboutTeaser() {
           <SectionHeading eyebrow="About" title="Meet LATIF" />
           <Reveal delay={60} className="mt-8 border-l border-gold pl-5">
             <p className="wordmark text-3xl text-navy">LATIF</p>
-            <p className="mt-2 text-xs uppercase leading-relaxed tracking-[0.22em] text-gold">Ebook Promotion Specialist | Author Outreach &amp; Book Marketing</p>
+            <p className="mt-2 text-xs uppercase leading-relaxed tracking-[0.22em] text-gold">Book Promotion Specialist | Author Outreach &amp; Book Marketing</p>
             <p className="mt-3 text-sm text-muted-foreground">Associated business brand · <span className="font-display text-base text-navy">Fourth Group &amp; Co.</span></p>
           </Reveal>
           <Reveal delay={120}>
             <p className="mt-8 text-lg leading-relaxed text-charcoal">
-              LATIF is an Ebook Promotion Specialist focused on helping authors present their books professionally and explore meaningful promotional opportunities.
+              LATIF is a Book Promotion Specialist focused on helping authors present their books professionally and explore meaningful promotional opportunities.
             </p>
             <p className="mt-5 leading-relaxed text-muted-foreground">
               Through author outreach, creative book marketing and digital promotional services, LATIF works to help authors strengthen their book presentation, improve discoverability and introduce their work to potential readers.

@@ -9,7 +9,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: pageMeta(
-      "Meet LATIF — Ebook Promotion Specialist",
+      "Meet LATIF — Book Promotion Specialist",
       "LATIF helps authors present their books professionally through author outreach, creative book marketing and digital promotional services.",
     ),
   }),
@@ -25,11 +25,11 @@ function AboutPage() {
             <SectionHeading as="h1" eyebrow="About" title="Meet LATIF" />
             <Reveal delay={60} className="mt-8 border-l border-gold pl-5">
               <p className="wordmark text-3xl text-navy">LATIF</p>
-              <p className="mt-2 text-xs uppercase leading-relaxed tracking-[0.22em] text-gold">Ebook Promotion Specialist | Author Outreach &amp; Book Marketing</p>
+              <p className="mt-2 text-xs uppercase leading-relaxed tracking-[0.22em] text-gold">Book Promotion Specialist | Author Outreach &amp; Book Marketing</p>
             </Reveal>
             <Reveal delay={120} className="mt-10 space-y-6 text-lg leading-relaxed text-charcoal">
               <p>
-                LATIF is an Ebook Promotion Specialist focused on helping authors present their books professionally and explore meaningful promotional opportunities.
+                LATIF is a Book Promotion Specialist focused on helping authors present their books professionally and explore meaningful promotional opportunities.
               </p>
               <p className="text-muted-foreground">
                 Through author outreach, creative book marketing and digital promotional services, LATIF works to help authors strengthen their book presentation, improve discoverability and introduce their work to potential readers.
@@ -42,7 +42,7 @@ function AboutPage() {
               <div className="bg-paper p-6">
                 <p className="eyebrow text-gold">Professional Name</p>
                 <p className="mt-3 wordmark text-2xl text-navy">LATIF</p>
-                <p className="mt-2 text-sm text-muted-foreground">Ebook Promotion Specialist</p>
+                <p className="mt-2 text-sm text-muted-foreground">Book Promotion Specialist</p>
               </div>
               <div className="bg-paper p-6">
                 <p className="eyebrow text-gold">Associated Business Brand</p>

@@ -1,4 +1,4 @@
-import portrait from "@/assets/latif-portrait.webp.asset.json";
+import portrait from "@/assets/latif-portrait.jpg";
 import { cn } from "@/lib/utils";
 
 /** LATIF's real uploaded portrait — layout and frame only, the photo itself is never altered. */
@@ -12,10 +12,10 @@ export function LatifPortrait({ frameSide = "right", eager = false, className }:
         />
         <div className="relative bg-paper p-2 shadow-card">
           <img
-            src={portrait.url}
-            alt="Portrait of LATIF, Ebook Promotion Specialist"
-            width={1200}
-            height={1200}
+            src={portrait}
+            alt="Portrait of LATIF, Book Promotion Specialist"
+            width={1536}
+            height={1536}
             loading={eager ? "eager" : "lazy"}
             className="aspect-[4/5] w-full object-cover object-[50%_30%]"
           />
@@ -24,7 +24,7 @@ export function LatifPortrait({ frameSide = "right", eager = false, className }:
       <figcaption className="mt-8 flex items-center gap-4">
         <span className="h-px w-10 bg-gold" aria-hidden="true" />
         <span className="wordmark text-lg text-navy">LATIF</span>
-        <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Ebook Promotion Specialist</span>
+        <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Book Promotion Specialist</span>
       </figcaption>
     </figure>
   );
