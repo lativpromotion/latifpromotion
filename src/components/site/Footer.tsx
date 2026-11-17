@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram } from "lucide-react";
 import { BRAND, SOCIALS, type SocialPlatform } from "@/lib/services";
+import logoDark from "@/assets/logo/latif-logo-dark.webp";
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -31,8 +32,17 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="grid gap-14 md:grid-cols-12">
           <div className="md:col-span-5">
-            <p className="wordmark text-5xl text-on-navy md:text-6xl">LATIF</p>
-            <p className="mt-5 text-xs uppercase tracking-[0.24em] text-gold">{BRAND.title}</p>
+            <Link to="/" aria-label="LATIF — home" className="inline-block">
+              <img
+                src={logoDark}
+                alt="LATIF — Book Promotion & Creative Services, Fourth Group & Co. Promote, Connect, Grow."
+                width={1000}
+                height={643}
+                loading="lazy"
+                className="h-auto w-64 sm:w-72 md:w-80"
+              />
+            </Link>
+            <p className="mt-8 text-xs uppercase tracking-[0.24em] text-gold">{BRAND.title}</p>
             <p className="mt-8 max-w-md font-display text-2xl italic leading-snug text-on-navy-muted">
               Helping authors present their books and connect with potential readers.
             </p>

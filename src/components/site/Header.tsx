@@ -2,6 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import logoSymbol from "@/assets/logo/latif-symbol-light.webp";
+import logoName from "@/assets/logo/latif-name-light.webp";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -31,10 +33,25 @@ export function Header() {
       )}
     >
       <div className={cn("mx-auto flex max-w-7xl items-center justify-between px-6 transition-all duration-500 lg:px-10", scrolled ? "h-16" : "h-20")}>
-        <Link to="/" className="group flex flex-col leading-none" aria-label="LATIF — home" onClick={() => setOpen(false)}>
-          <span className="wordmark text-2xl text-navy md:text-[1.7rem]">LATIF</span>
-          <span className="mt-1 hidden text-[0.6rem] font-medium uppercase tracking-[0.3em] text-gold sm:block">
-            Book Promotion Specialist
+        <Link to="/" className="group flex items-center gap-3" aria-label="LATIF — home" onClick={() => setOpen(false)}>
+          <img
+            src={logoSymbol}
+            alt=""
+            width={385}
+            height={192}
+            className={cn("w-auto transition-all duration-500", scrolled ? "h-9" : "h-10 md:h-12")}
+          />
+          <span className="flex flex-col leading-none">
+            <img
+              src={logoName}
+              alt="LATIF"
+              width={560}
+              height={96}
+              className={cn("w-auto transition-all duration-500", scrolled ? "h-4 md:h-[1.15rem]" : "h-[1.15rem] md:h-6")}
+            />
+            <span className="mt-1.5 hidden text-[0.58rem] font-medium uppercase tracking-[0.3em] text-gold sm:block">
+              Book Promotion Specialist
+            </span>
           </span>
         </Link>
 
