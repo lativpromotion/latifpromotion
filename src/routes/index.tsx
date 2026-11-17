@@ -101,7 +101,7 @@ function AboutTeaser() {
           </Reveal>
           <Reveal delay={120}>
             <p className="mt-8 text-lg leading-relaxed text-charcoal">
-              LATIF is an Book Promotion Specialist focused on helping authors present their books professionally and explore meaningful promotional opportunities.
+              LATIF is a Book Promotion Specialist focused on helping authors present their books professionally and explore meaningful promotional opportunities.
             </p>
             <p className="mt-5 leading-relaxed text-muted-foreground">
               Through author outreach, creative book marketing and digital promotional services, LATIF works to help authors strengthen their book presentation, improve discoverability and introduce their work to potential readers.

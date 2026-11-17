@@ -4,7 +4,7 @@ hey i want to build a portfolio website
 
 # PROJECT: PREMIUM AUTHOR PROMOTION & BOOK MARKETING PORTFOLIO WEBSITE
 
-Build a sophisticated, premium, fully responsive professional portfolio website for LATIF, an Book Promotion Specialist specializing in author outreach, book marketing and creative promotional services.
+Build a sophisticated, premium, fully responsive professional portfolio website for LATIF, a Book Promotion Specialist specializing in author outreach, book marketing and creative promotional services.
 
 The website must look like an established international book marketing and publishing agency, not a basic freelancer template.
 
@@ -114,7 +114,7 @@ Section heading:
 
 Write a professional introduction:
 
-"LATIF is an Book Promotion Specialist focused on helping authors present their books professionally and explore meaningful promotional opportunities.
+"LATIF is a Book Promotion Specialist focused on helping authors present their books professionally and explore meaningful promotional opportunities.
 
 Through author outreach, creative book marketing and digital promotional services, LATIF works to help authors strengthen their book presentation, improve discoverability and introduce their work to potential readers.
 
